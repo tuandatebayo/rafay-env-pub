@@ -1,0 +1,53 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: EnvironmentTemplate
+metadata:
+  name: em-et-intermediate
+  project: em-gs
+spec:
+  agents:
+  - name: em-gs
+  resources:
+  - kind: resourcetemplate
+    name: em-rt-intermediate
+    resourceOptions:
+      version: v1
+    type: dynamic
+  variables:
+  - name: input_name
+    options:
+      displayMetadata:
+        disabled: false
+        section: ""
+        sectionDescription: ""
+        tooltip: ""
+        weight: ""
+      override:
+        type: allowed
+      required: true
+    valueType: text
+  - name: project
+    options:
+      displayMetadata:
+        disabled: false
+        section: ""
+        sectionDescription: ""
+        tooltip: ""
+        weight: ""
+      override:
+        type: notallowed
+    value: $(environment.project.name)$
+    valueType: expression
+  - name: cluster_name
+    options:
+      displayMetadata:
+        disabled: false
+        section: ""
+        sectionDescription: ""
+        tooltip: ""
+        weight: ""
+      override:
+        type: allowed
+      required: true
+    valueType: text
+  version: v1
+  versionState: draft

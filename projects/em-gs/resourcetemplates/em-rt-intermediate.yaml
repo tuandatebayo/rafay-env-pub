@@ -1,0 +1,20 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ResourceTemplate
+metadata:
+  name: em-rt-intermediate
+  project: em-gs
+spec:
+  agents:
+  - name: em-gs
+  contexts:
+  - name: rafay-configcontext
+  provider: opentofu
+  providerOptions:
+    openTofu:
+      backendType: system
+  repositoryOptions:
+    branch: main
+    directoryPath: /terraform/intermediate/
+    name: em-gs
+  version: v1
+  versionState: draft

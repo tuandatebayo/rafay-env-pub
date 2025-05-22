@@ -1,0 +1,31 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: rafay-configcontext
+  project: em-gs
+spec:
+  envs:
+  - key: RCTL_API_KEY
+    options:
+      mask: true
+      override:
+        type: notallowed
+      sensitive: true
+    value: UPDATEVALUE
+  - key: RCTL_API_SECRET
+    options:
+      mask: true
+      override:
+        type: notallowed
+      sensitive: true
+    value: UPDATEVALUE
+  - key: RCTL_PROJECT
+    options:
+      override:
+        type: notallowed
+    value: defaultproject
+  - key: RCTL_REST_ENDPOINT
+    options:
+      override:
+        type: notallowed
+    value: console.rafay.dev
