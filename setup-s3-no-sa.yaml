@@ -239,7 +239,7 @@ spec:
           envFrom:
             - secretRef:
                 name: minio-root-user
-          image: quay.io/modh/odh-generic-data-science-notebook:latest
+          image: quay.io/modh/odh-generic-data-science-notebook@sha256:3e51c462fc03b5ccb080f006ced86d36480da036fa04b8685a3e4d6d51a817ba
           imagePullPolicy: IfNotPresent
           name: create-buckets
       initContainers:
